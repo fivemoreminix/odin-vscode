@@ -4,6 +4,9 @@
     "description": "Odin language support.",
     "version": "1.1.0",
     "readme": "README.md",
+    "repository": {
+        "url": "https://github.com/asmoaesl/odin-vscode"
+    },
     "publisher": "aesl",
     "engines": {
         "vscode": "^1.23.0"
