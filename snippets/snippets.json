@@ -1,0 +1,10 @@
+{
+    "Main": {
+        "prefix": "main",
+        "body": [
+            "main :: proc() {",
+            "\t$0",
+            "}"
+        ]
+    }
+}
