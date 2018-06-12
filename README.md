@@ -8,10 +8,14 @@ Syntax highlighting and code snippets for Visual Studio Code.
 
 - Ported https://github.com/odin-lang/sublime-odin/blob/master/Odin.sublime-syntax to .tmLanguage (this).
 
-### 1.1
+### 1.1.0
 
 - Added support for code snippets.
 - Added one code snippet: `main`
+
+### 1.1.1
+
+- Replaced Unlicense with MIT license.
 
 I'm not too creative right now, so **if you want to see any more snippets, as always, please make an issue or pull request.** Thanks.
 
