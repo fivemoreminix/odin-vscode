@@ -66,7 +66,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.odin",
-					"match": "\\b(import|export|foreign)\\b"
+					"match": "\\b(import|export|foreign|package)\\b"
 				},
 				{
 					"name": "keyword.control.odin",
@@ -106,7 +106,7 @@
 				},
 				{
 					"name": "storage.type.odin",
-					"match": "\\b(type|macro|struct|enum|union|map|bit_field)\\b"
+					"match": "\\b(type|var|macro|struct|enum|union|map|set|bit_field|typeid)\\b"
 				},
 				{
 					"name": "keyword.function.odin",
@@ -156,7 +156,7 @@
 							"name": "keyword.function.odin"
 						}
 					},
-					"match": "\\b(size_of|align_of|offset_of|type_of|type_info_of)\\b\\s*\\("
+					"match": "\\b(size_of|align_of|offset_of|type_of|type_info_of|typeid_of)\\b\\s*\\("
 				},
 				{
 					"captures": {
