@@ -1,10 +1,189 @@
 {
-    "Main": {
-        "prefix": "main",
-        "body": [
-            "main :: proc() {",
-            "\t$0",
-            "}"
-        ]
-    }
+	"hellope": {
+		"prefix": "hellope",
+		"body": [
+			"package main",
+			"",
+			"import \"core:fmt\"",
+			"",
+			"main :: proc() {",
+			"\tfmt.println(\"Hellope!\");$0",
+			"}"
+		],
+		"description": "Hello World in Odin"
+	},
+
+	"main": {
+		"prefix": "main",
+		"body": [
+			"main :: proc() {",
+			"\t$0",
+			"}"
+		],
+		"description": "main()"
+	},
+
+	"for": {
+		"prefix": "for",
+		"body": [
+			"for i := 0; i < count; i += 1 {",
+			"\t$0",
+			"}"
+		],
+		"description": "Standard for loop"
+	},
+
+	"for do": {
+		"prefix": "for do",
+		"body": [
+			"for i := 0; i < count; i += 1 do /*expression*/$0"
+		],
+		"description": "Inline for loop"
+	},
+
+	"for while": {
+		"prefix": "for while",
+		"body": [
+			"i := 0;",
+			"for i < count {",
+			"$0",
+			"\ti += 1;",
+			"}"
+		],
+		"description": "While equivalent for loop"
+	},
+
+	"for range": {
+		"prefix": "for range",
+		"body": [
+			"for i in 0..9 {",
+			"\t$0",
+			"}"
+		],
+		"description": "While equivalent for loop"
+	},
+
+	"if": {
+		"prefix": "if",
+		"body": [
+			"if /*condition*/ {",
+			"\t$0",
+			"}"
+		],
+		"description": "If statement"
+	},
+
+	"ifel": {
+		"prefix": "ifel",
+		"body": [
+			"if /*condition*/ {",
+			"\t$0",
+			"} else {",
+			"\t",
+			"}"
+		],
+		"description": "If-else statement"
+	},
+
+	"ifelif": {
+		"prefix": "ifelif",
+		"body": [
+			"if /*condition*/ {",
+			"\t$0",
+			"} else if /*condition*/ {",
+			"\t",
+			"} else {",
+			"\t",
+			"}"
+		],
+		"description": "If-else if-else statement"
+	},
+
+	"switch": {
+		"prefix": "switch",
+		"body": [
+			"switch i {",
+			"\tcase /*expression*/:",
+			"\t/*code*/",
+			"\tcase: // default",
+			"\t",
+			"}"
+		],
+		"description": "Switch statement"
+	},
+
+	"switch true": {
+		"prefix": "switch true",
+		"body": [
+			"switch {",
+			"\tcase /*expression*/:",
+			"\t/*code*/",
+			"\tcase: // default",
+			"\t",
+			"}"
+		],
+		"description": "Switch true statement"
+	},
+
+	"when": {
+		"prefix": "when",
+		"body": [
+			"when /*constant expression*/$0 {",
+			"\t",
+			"}"
+		],
+		"description": "When statement"
+	},
+
+	"when el": {
+		"prefix": "when el",
+		"body": [
+			"when /*constant expression*/$0 {",
+			"\t",
+			"} else {",
+			"\t",
+			"}"
+		],
+		"description": "When-else statement"
+	},
+
+	"when el when": {
+		"prefix": "when el when",
+		"body": [
+			"when /*constant expression*/$0 {",
+			"\t",
+			"} else when /*constant expression*/ {",
+			"\t",
+			"} else {",
+			"\t",
+			"}"
+		],
+		"description": "When-else when-else statement"
+	},
+
+	"struct": {
+		"prefix": "struct",
+		"body": [
+			"$0 :: struct {",
+			"\t",
+			"}"
+		],
+		"description": "Struct"
+	},
+
+	"println": {
+		"prefix": "println",
+		"body": [
+			"fmt.println($0);"
+		],
+		"description": "Print line"
+	},
+
+	"printf": {
+		"prefix": "printf",
+		"body": [
+			"fmt.printf(\"$0\", );"
+		],
+		"description": "Print format"
+	}
 }
