@@ -60,7 +60,7 @@
 			"\t$0",
 			"}"
 		],
-		"description": "While equivalent for loop"
+		"description": "Range for loop"
 	},
 
 	"if": {
