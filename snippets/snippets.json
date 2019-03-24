@@ -56,11 +56,11 @@
 	"for range": {
 		"prefix": "for range",
 		"body": [
-			"for i in 0..9 {",
+			"for i in /*range*/ {",
 			"\t$0",
 			"}"
 		],
-		"description": "While equivalent for loop"
+		"description": "Range for loop"
 	},
 
 	"if": {
@@ -185,5 +185,253 @@
 			"fmt.printf(\"$0\", );"
 		],
 		"description": "Print format"
+	},
+
+	"package": {
+		"prefix": "package",
+		"body": [
+			"package $0"
+		],
+		"description": "package"
+	},
+
+	"import": {
+		"prefix": "import",
+		"body": [
+			"import $0"
+		],
+		"description": "import"
+	},
+
+	"foreign": {
+		"prefix": "foreign",
+		"body": [
+			"foreign $0"
+		],
+		"description": "foreign"
+	},
+
+	"defer": {
+		"prefix": "defer",
+		"body": [
+			"defer $0"
+		],
+		"description": "defer"
+	},
+
+	"return": {
+		"prefix": "return",
+		"body": [
+			"return $0"
+		],
+		"description": "return"
+	},
+
+	"in": {
+		"prefix": "in",
+		"body": [
+			"in $0"
+		],
+		"description": "in"
+	},
+
+	"notin": {
+		"prefix": "notin",
+		"body": [
+			"notin $0"
+		],
+		"description": "notin"
+	},
+
+	"do": {
+		"prefix": "do",
+		"body": [
+			"do $0"
+		],
+		"description": "do"
+	},
+
+	"break": {
+		"prefix": "break",
+		"body": [
+			"break $0"
+		],
+		"description": "break"
+	},
+
+	"continue": {
+		"prefix": "continue",
+		"body": [
+			"continue $0"
+		],
+		"description": "continue"
+	},
+
+	"fallthrough": {
+		"prefix": "fallthrough",
+		"body": [
+			"fallthrough $0"
+		],
+		"description": "fallthrough"
+	},
+
+	"proc": {
+		"prefix": "proc",
+		"body": [
+			"proc $0"
+		],
+		"description": "proc"
+	},
+
+	"union": {
+		"prefix": "union",
+		"body": [
+			"union $0"
+		],
+		"description": "union"
+	},
+
+	"enum": {
+		"prefix": "enum",
+		"body": [
+			"enum $0"
+		],
+		"description": "enum"
+	},
+
+	"bit_field": {
+		"prefix": "bit_field",
+		"body": [
+			"bit_field $0"
+		],
+		"description": "bit_field"
+	},
+
+	"bit_set": {
+		"prefix": "bit_set",
+		"body": [
+			"bit_set $0"
+		],
+		"description": "bit_set"
+	},
+
+	"map": {
+		"prefix": "map",
+		"body": [
+			"map $0"
+		],
+		"description": "map"
+	},
+
+	"dynamic": {
+		"prefix": "dynamic",
+		"body": [
+			"dynamic $0"
+		],
+		"description": "dynamic"
+	},
+
+	"cast": {
+		"prefix": "cast",
+		"body": [
+			"cast $0"
+		],
+		"description": "cast"
+	},
+
+	"auto_cast": {
+		"prefix": "auto_cast",
+		"body": [
+			"auto_cast $0"
+		],
+		"description": "auto_cast"
+	},
+
+	"transmute": {
+		"prefix": "transmute",
+		"body": [
+			"transmute $0"
+		],
+		"description": "transmute"
+	},
+
+	"using": {
+		"prefix": "using",
+		"body": [
+			"using $0"
+		],
+		"description": "using"
+	},
+
+	"inline": {
+		"prefix": "inline",
+		"body": [
+			"inline $0"
+		],
+		"description": "inline"
+	},
+
+	"no_inline": {
+		"prefix": "no_inline",
+		"body": [
+			"no_inline $0"
+		],
+		"description": "no_inline"
+	},
+
+	"context": {
+		"prefix": "context",
+		"body": [
+			"context $0"
+		],
+		"description": "context"
+	},
+
+	"size_of": {
+		"prefix": "size_of",
+		"body": [
+			"size_of $0"
+		],
+		"description": "size_of"
+	},
+
+	"align_of": {
+		"prefix": "align_of",
+		"body": [
+			"align_of $0"
+		],
+		"description": "align_of"
+	},
+
+	"offset_of": {
+		"prefix": "offset_of",
+		"body": [
+			"offset_of $0"
+		],
+		"description": "offset_of"
+	},
+
+	"type_of": {
+		"prefix": "type_of",
+		"body": [
+			"type_of $0"
+		],
+		"description": "type_of"
+	},
+
+	"distinct": {
+		"prefix": "distinct",
+		"body": [
+			"distinct $0"
+		],
+		"description": "distinct"
+	},
+
+	"opaque": {
+		"prefix": "opaque ",
+		"body": [
+			"opaque $0"
+		],
+		"description": "opaque"
 	}
 }
