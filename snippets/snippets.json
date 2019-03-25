@@ -26,103 +26,111 @@
 	"for": {
 		"prefix": "for",
 		"body": [
-			"for i := $1; i < $2; i += 1 {",
-			"\t$3",
+			"for ${1:i} := ${2:0}; ${1:i} < ${3:n}; $1 += 1 {",
+			"\t$0",
 			"}"
 		],
-		"description": "Standard 'for' loop"
+		"description": "Insert 'for' loop"
 	},
 
 	"for do": {
 		"prefix": "for do",
 		"body": [
-			"for i := $1; i < $2; i += 1 do $3"
+			"for ${1:i} := ${2:0}; ${1:i} < ${3:n}; i += 1 do $0"
 		],
-		"description": "Inline 'for' loop"
+		"description": "Insert inline 'for' loop"
 	},
 
 	"for while": {
 		"prefix": "for while",
 		"body": [
-			"i := $1;",
-			"for i < $2 {",
-			"\t$3",
-			"\ti += 1;",
+			"${1:i} := ${2:0};",
+			"for ${1:i} < ${3:n} {",
+			"\t$0",
+			"\t${1:i} += 1;",
 			"}"
 		],
-		"description": "While equivalent 'for' loop"
+		"description": "Insert 'while' equivalent 'for' loop"
 	},
 
 	"for range": {
 		"prefix": "for range",
 		"body": [
-			"for i in $1 {",
-			"\t$2",
+			"for ${1:i} in ${2:array} {",
+			"\t$0",
 			"}"
 		],
-		"description": "Range 'for' loop"
+		"description": "Insert range 'for' loop"
 	},
 
 	"if": {
 		"prefix": "if",
 		"body": [
-			"if $1 {",
-			"\t$2",
+			"if ${1:condition} {",
+			"\t$0",
 			"}"
 		],
-		"description": "An 'if' statement"
+		"description": "Insert 'if' statement"
+	},
+
+	"if do": {
+		"prefix": "if do",
+		"body": [
+			"if ${1:condition} do $0"
+		],
+		"description": "Insert 'if ... do' statement"
 	},
 
 	"ifel": {
 		"prefix": "ifel",
 		"body": [
-			"if $1 {",
+			"if ${1:condition} {",
 			"\t$2",
 			"} else {",
 			"\t$3",
 			"}"
 		],
-		"description": "An 'if-else' statement"
+		"description": "Insert 'if-else' statement"
 	},
 
 	"ifelif": {
 		"prefix": "ifelif",
 		"body": [
-			"if $1 {",
+			"if ${1:condition 1} {",
 			"\t$3",
-			"} else if $2 {",
+			"} else if ${2:condition 2} {",
 			"\t$4",
 			"} else {",
 			"\t$5",
 			"}"
 		],
-		"description": "An 'if', 'else if', 'else' statement"
+		"description": "Insert 'if', 'else if', 'else' statement"
 	},
 
 	"switch": {
 		"prefix": "switch",
 		"body": [
-			"switch $1 {",
-			"\tcase $2:",
+			"switch ${1:variable} {",
+			"case ${2:value}:",
 			"\t$3",
-			"\tcase: // default",
+			"case: // default",
 			"\t$4",
 			"}"
 		],
-		"description": "A 'switch' statement"
+		"description": "Insert 'switch' statement"
 	},
 
 	"switch true": {
 		"prefix": "switch true",
 		"body": [
 			"switch {",
-			"\tcase $1:",
+			"case ${1:condition}:",
 			"\t$2",
-			"\tcase: // default",
+			"case: // default",
 			"\t$3",
 			"}"
 		],
-		"description": "A 'switch true' statement"
+		"description": "Insert 'switch true' statement"
 	},
 
 	"when": {
@@ -132,7 +140,7 @@
 			"\t$2",
 			"}"
 		],
-		"description": "'When' statement"
+		"description": "Insert 'When' statement"
 	},
 
 	"when el": {
@@ -144,7 +152,7 @@
 			"\t$3",
 			"}"
 		],
-		"description": "'When-else' statement"
+		"description": "Insert 'When-else' statement"
 	},
 
 	"when el when": {
@@ -158,33 +166,33 @@
 			"\t$5",
 			"}"
 		],
-		"description": "A 'when', 'else when', 'else' statement"
+		"description": "Insert 'when', 'else when', 'else' statement"
 	},
 
 	"struct": {
 		"prefix": "struct",
 		"body": [
-			"$1 :: struct {",
-			"\t$2",
+			"${1:name} :: struct {",
+			"\t$0",
 			"}"
 		],
-		"description": "A 'struct'"
+		"description": "Insert 'struct'"
 	},
 
 	"println": {
 		"prefix": "println",
 		"body": [
-			"fmt.println($0);"
+			"fmt.println($1)$0"
 		],
-		"description": "A 'println'"
+		"description": "Insert 'println'"
 	},
 
 	"printf": {
 		"prefix": "printf",
 		"body": [
-			"fmt.printf(\"$1\", $2);"
+			"fmt.printf(\"$1\", $2)$0"
 		],
-		"description": "A formatted print"
+		"description": "Insert formatted print"
 	},
 
 	"package": {
