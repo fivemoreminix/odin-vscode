@@ -1,8 +1,8 @@
 {
     "name": "odin",
     "displayName": "Odin",
-    "description": "Odin syntax highlighting and snippets for Visual Studio Code by Luke I. Wilson and contributors.",
-    "version": "1.2",
+    "description": "Odin syntax highlighting and idiomatic code snippets for Visual Studio Code by Luke I. Wilson and contributors.",
+    "version": "1.2.0",
     "readme": "README.md",
     "repository": {
         "url": "https://github.com/asmoaesl/odin-vscode"
