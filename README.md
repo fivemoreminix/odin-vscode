@@ -1,10 +1,11 @@
 # Odin
 Visual Studio Code syntax highlighting and code snippets for Odin.
 
-![Example 1](images/factorial.png)
+# Screenshots
+![Example 1](images/factorial.gif)
 ![Example 2](images/demo.png)
 
-## Features
+# Features
 - [X] Syntax highlighting
 - [X] Snippets
 - [X] Bracket matching
