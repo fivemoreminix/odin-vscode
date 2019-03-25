@@ -10,7 +10,7 @@
 			"\tfmt.println(\"Hellope!\");$0",
 			"}"
 		],
-		"description": "Hello World in Odin"
+		"description": "'Hello World' in Odin"
 	},
 
 	"main": {
@@ -26,149 +26,149 @@
 	"for": {
 		"prefix": "for",
 		"body": [
-			"for i := 0; i < count; i += 1 {",
-			"\t$0",
+			"for i := $1; i < $2; i += 1 {",
+			"\t$3",
 			"}"
 		],
-		"description": "Standard for loop"
+		"description": "Standard 'for' loop"
 	},
 
 	"for do": {
 		"prefix": "for do",
 		"body": [
-			"for i := 0; i < count; i += 1 do /*expression*/$0"
+			"for i := $1; i < $2; i += 1 do $3"
 		],
-		"description": "Inline for loop"
+		"description": "Inline 'for' loop"
 	},
 
 	"for while": {
 		"prefix": "for while",
 		"body": [
-			"i := 0;",
-			"for i < count {",
-			"$0",
+			"i := $1;",
+			"for i < $2 {",
+			"\t$3",
 			"\ti += 1;",
 			"}"
 		],
-		"description": "While equivalent for loop"
+		"description": "While equivalent 'for' loop"
 	},
 
 	"for range": {
 		"prefix": "for range",
 		"body": [
-			"for i in /*range*/ {",
-			"\t$0",
+			"for i in $1 {",
+			"\t$2",
 			"}"
 		],
-		"description": "Range for loop"
+		"description": "Range 'for' loop"
 	},
 
 	"if": {
 		"prefix": "if",
 		"body": [
-			"if /*condition*/ {",
-			"\t$0",
+			"if $1 {",
+			"\t$2",
 			"}"
 		],
-		"description": "If statement"
+		"description": "An 'if' statement"
 	},
 
 	"ifel": {
 		"prefix": "ifel",
 		"body": [
-			"if /*condition*/ {",
-			"\t$0",
+			"if $1 {",
+			"\t$2",
 			"} else {",
-			"\t",
+			"\t$3",
 			"}"
 		],
-		"description": "If-else statement"
+		"description": "An 'if-else' statement"
 	},
 
 	"ifelif": {
 		"prefix": "ifelif",
 		"body": [
-			"if /*condition*/ {",
-			"\t$0",
-			"} else if /*condition*/ {",
-			"\t",
+			"if $1 {",
+			"\t$3",
+			"} else if $2 {",
+			"\t$4",
 			"} else {",
-			"\t",
+			"\t$5",
 			"}"
 		],
-		"description": "If-else if-else statement"
+		"description": "An 'if', 'else if', 'else' statement"
 	},
 
 	"switch": {
 		"prefix": "switch",
 		"body": [
-			"switch i {",
-			"\tcase /*expression*/:",
-			"\t/*code*/",
+			"switch $1 {",
+			"\tcase $2:",
+			"\t$3",
 			"\tcase: // default",
-			"\t",
+			"\t$4",
 			"}"
 		],
-		"description": "Switch statement"
+		"description": "A 'switch' statement"
 	},
 
 	"switch true": {
 		"prefix": "switch true",
 		"body": [
 			"switch {",
-			"\tcase /*expression*/:",
-			"\t/*code*/",
+			"\tcase $1:",
+			"\t$2",
 			"\tcase: // default",
-			"\t",
+			"\t$3",
 			"}"
 		],
-		"description": "Switch true statement"
+		"description": "A 'switch true' statement"
 	},
 
 	"when": {
 		"prefix": "when",
 		"body": [
-			"when /*constant expression*/$0 {",
-			"\t",
+			"when $1 {",
+			"\t$2",
 			"}"
 		],
-		"description": "When statement"
+		"description": "'When' statement"
 	},
 
 	"when el": {
 		"prefix": "when el",
 		"body": [
-			"when /*constant expression*/$0 {",
-			"\t",
+			"when $1 {",
+			"\t$2",
 			"} else {",
-			"\t",
+			"\t$3",
 			"}"
 		],
-		"description": "When-else statement"
+		"description": "'When-else' statement"
 	},
 
 	"when el when": {
 		"prefix": "when el when",
 		"body": [
-			"when /*constant expression*/$0 {",
-			"\t",
-			"} else when /*constant expression*/ {",
-			"\t",
+			"when $1 {",
+			"\t$3",
+			"} else when $2 {",
+			"\t$4",
 			"} else {",
-			"\t",
+			"\t$5",
 			"}"
 		],
-		"description": "When-else when-else statement"
+		"description": "A 'when', 'else when', 'else' statement"
 	},
 
 	"struct": {
 		"prefix": "struct",
 		"body": [
-			"$0 :: struct {",
-			"\t",
+			"$1 :: struct {",
+			"\t$2",
 			"}"
 		],
-		"description": "Struct"
+		"description": "A 'struct'"
 	},
 
 	"println": {
@@ -176,15 +176,15 @@
 		"body": [
 			"fmt.println($0);"
 		],
-		"description": "Print line"
+		"description": "A 'println'"
 	},
 
 	"printf": {
 		"prefix": "printf",
 		"body": [
-			"fmt.printf(\"$0\", );"
+			"fmt.printf(\"$1\", $2);"
 		],
-		"description": "Print format"
+		"description": "A formatted print"
 	},
 
 	"package": {
@@ -192,7 +192,7 @@
 		"body": [
 			"package $0"
 		],
-		"description": "package"
+		"description": "Include a package"
 	},
 
 	"import": {
@@ -200,7 +200,7 @@
 		"body": [
 			"import $0"
 		],
-		"description": "import"
+		"description": "Add an import"
 	},
 
 	"foreign": {
