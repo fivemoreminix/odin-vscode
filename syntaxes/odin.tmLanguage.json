@@ -9,16 +9,19 @@
 			"include": "#keywords"
 		},
 		{
-			"include": "#functions-and-declarations"
+			"include": "#types"
 		},
 		{
-			"include": "#types"
+			"include": "#functions-and-declarations"
 		},
 		{
 			"include": "#strings"
 		},
 		{
 			"include": "#string-escaped-char"
+		},
+		{
+			"include": "#punctuation"
 		}
 	],
 	"repository": {
@@ -65,6 +68,11 @@
 		"keywords": {
 			"patterns": [
 				{
+					"name": "keyword.tag.odin",
+					"comment": "Use #name to use a pattern",
+					"match": "\\b([#@]\\s*[A-Za-z_][A-Za-z0-9_]*)\\b"
+				},
+				{
 					"name": "keyword.control.odin",
 					"match": "\\b(import|export|foreign|package)\\b"
 				},
@@ -106,7 +114,7 @@
 				},
 				{
 					"name": "storage.type.odin",
-					"match": "\\b(type|var|macro|struct|enum|union|map|set|bit_field|typeid)\\b"
+					"match": "\\b(type|var|macro|struct|enum|union|map|set|bit_set|bit_field|typeid)\\b"
 				},
 				{
 					"name": "keyword.function.odin",
@@ -114,12 +122,11 @@
 				},
 				{
 					"name": "keyword.operator.odin",
-					"match": "@"
+					"match": "@|(\\||\\!|:|\\+|-\\>?|\\*|/|\\<\\<?|\\>\\>?|\\~)=?|=|::?|\\.\\."
 				},
 				{
-					"name": "keyword.tag.odin",
-					"comment": "Use #name to use a pattern",
-					"match": "\\b([#@]\\s*{{#identifier}})\\b"
+					"name": "keyword.other.odin",
+					"match": "#[A-Za-z_][A-Za-z_0-9]*"
 				}
 			]
 		},
@@ -131,10 +138,16 @@
 							"name": "entity.name.function.odin"
 						},
 						"2": {
+							"name": "punctuation.odin"
+						},
+						"3": {
+							"name": "punctuation.odin"
+						},
+						"4": {
 							"name": "storage.type.odin"
 						}
 					},
-					"match": "\\b({{#identifier}})\\s*[:]\\s*[:]\\s*(proc)"
+					"match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*([:])\\s*([:])\\s*(proc)"
 				},
 				{
 					"captures": {
@@ -146,9 +159,15 @@
 						},
 						"3": {
 							"name": "storage.type.odin"
+						},
+						"4": {
+							"name": "keyword.control.odin"
+						},
+						"5": {
+							"name": "storage.type.odin"
 						}
 					},
-					"match": "\\b({{#identifier}})\\s*[:]\\s*[:]\\s*(inline|no_inline)\\s+(proc)"
+					"match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*([:])\\s*([:])\\s*(inline|no_inline)\\s+(proc)"
 				},
 				{
 					"captures": {
@@ -161,18 +180,35 @@
 				{
 					"captures": {
 						"1": {
-							"name": "storage.type.odin"
+							"name": "support.function.builtin.odin"
+						},
+						"2": {
+							"name": "punctuation.odin"
 						}
 					},
-					"match": "(proc|macro)\\s*[\\(]"
+					"match": "\\b(len|cap|make|resize|reserve|append|delete|assertf?|panicf?)\\b\\s*(\\()"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "storage.type.odin"
+						},
+						"2": {
+							"name": "punctuation.odin"
+						}
+					},
+					"match": "(proc|macro)\\s*([\\(])"
 				},
 				{
 					"captures": {
 						"1": {
 							"name": "support.function.odin"
+						},
+						"2": {
+							"name": "punctuation.odin"
 						}
 					},
-					"match": "({{identifier}})\\s*[!]?\\s*[\\(]"
+					"match": "([A-Za-z_][A-Za-z0-9_]*)\\s*[!]?\\s*([\\(])"
 				},
 				{
 					"captures": {
@@ -183,7 +219,7 @@
 							"name": "storage.type.odin"
 						}
 					},
-					"match": "\\b({{identifier}})\\s*[:]\\s*[:]\\s*(struct|union|enum|bit_field)"
+					"match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*[:]\\s*[:]\\s*(struct|union|enum|bit_set|bit_field)"
 				}
 			]
 		},
@@ -201,7 +237,7 @@
 							"name": "meta.block.odin"
 						}
 					},
-					"match": "\\b(struct|enum|union|bit_field)\\b(?:(\\{)(\\}))?"
+					"match": "\\b(struct|enum|union|bit_field|bit_set)\\b(?:(\\{)(\\}))?"
 				},
 				{
 					"name": "storage.type.odin",
@@ -234,23 +270,23 @@
 		"basic-types": {
 			"patterns": [
 				{
-					"name": "storage.type.odin",
-					"match": "\\b((i8|i16|i32|i64|int)|(u8|u16|u32|u64|uint|uintptr))\\b"
+					"name": "support.type.odin",
+					"match": "\\b((i8|i16|i32|i64|i128|int)|(u8|u16|u32|u64|u128|uint|uintptr))\\b"
 				},
 				{
-					"name": "storage.type.odin",
+					"name": "support.type.odin",
 					"match": "\\b((f16|f32|f64)|(complex32|complex64|complex128))\\b"
 				},
 				{
-					"name": "storage.type.odin",
+					"name": "support.type.odin",
 					"match": "\\b(bool|b8|b16|b32|b64)\\b"
 				},
 				{
-					"name": "storage.type.odin",
+					"name": "support.type.odin",
 					"match": "\\b(string|rune|rawptr|any)\\b"
 				},
 				{
-					"name": "storage.type.odin",
+					"name": "support.type.odin",
 					"match": "\\b(byte|cstring)\\b"
 				}
 			]
@@ -297,6 +333,14 @@
 					]
 				}
 			}
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.odin",
+					"match": "\\(|\\)|\\{|\\}|;|\\[|\\]|\\."
+				}
+			]
 		}
 	},
 	"scopeName": "source.odin"
