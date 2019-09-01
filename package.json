@@ -1,34 +1,51 @@
 {
-    "name": "odin",
-    "displayName": "Odin",
-    "description": "Odin syntax highlighting and idiomatic code snippets for Visual Studio Code by Luke I. Wilson and contributors.",
-    "version": "1.2.2",
-    "readme": "README.md",
-    "repository": {
-        "url": "https://github.com/asmoaesl/odin-vscode"
-    },
-    "publisher": "aesl",
-    "engines": {
-        "vscode": "^1.23.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "contributes": {
-        "languages": [{
-            "id": "odin",
-            "aliases": ["Odin", "odin"],
-            "extensions": [".odin"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "odin",
-            "scopeName": "source.odin",
-            "path": "./syntaxes/odin.tmLanguage.json"
-        }],
-        "snippets": [{
-            "language": "odin",
-            "path": "./snippets/snippets.json"
-        }]
-    }
+	"name": "odin",
+	"icon": "icon.png",
+	"displayName": "Odin",
+	"description": "Odin syntax highlighting and idiomatic code snippets for Visual Studio Code by Luke I. Wilson and contributors.",
+	"version": "1.2.2",
+	"readme": "README.md",
+	"repository": {
+		"url": "https://github.com/asmoaesl/odin-vscode"
+	},
+	"publisher": "aesl",
+	"engines": {
+		"vscode": "^1.23.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "odin",
+				"aliases": [
+					"Odin",
+					"odin"
+				],
+				"extensions": [
+					".odin"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "odin",
+				"scopeName": "source.odin",
+				"path": "./syntaxes/odin.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "odin",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "f3a333b3-12da-445d-b048-82a3b8f47a7c",
+		"publisherDisplayName": "Luke Wilson",
+		"publisherId": "d5bba197-70a1-416b-abc9-7f9ac3459710"
+	}
 }
