@@ -42,7 +42,24 @@
 				"path": "./snippets/snippets.json"
 			}
 		],
-		"breakpoints": [{ "language": "odin" }]
+		"breakpoints": [{ "language": "odin" }],
+		"problemMatchers": [
+            {
+                "name": "odin",
+                "owner": "odin",
+                "fileLocation": [
+                    "absolute"
+                ],
+                "pattern": {
+                    "regexp": "^(.*)\\((\\d+):(\\d+)\\)\\s+(Warning|Error|Syntax Error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        ]
 	},
 	"__metadata": {
 		"id": "f3a333b3-12da-445d-b048-82a3b8f47a7c",
