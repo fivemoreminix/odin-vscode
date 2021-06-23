@@ -41,7 +41,8 @@
 				"language": "odin",
 				"path": "./snippets/snippets.json"
 			}
-		]
+		],
+		"breakpoints": [{ "language": "odin" }]
 	},
 	"__metadata": {
 		"id": "f3a333b3-12da-445d-b048-82a3b8f47a7c",
