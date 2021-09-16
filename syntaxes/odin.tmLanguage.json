@@ -22,11 +22,15 @@
 		},
 		{
 			"include": "#punctuation"
+		},
+		{
+			"include": "#identifier"
 		}
 	],
 	"repository": {
 		"identifier": {
 			"patterns": [{
+				"name": "variable.other.odin",
 				"match": "\\b[[:alpha:]_][[:alnum:]_]*\\b"
 			}]
 		},
